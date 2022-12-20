@@ -8,10 +8,48 @@
     <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
     <link rel="icon" type="image/png" href="images/favicon.png">
     <title>สยามวกาศานุกรม | บทนำ</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./css/styles.css">
 </head>
 
 <body>
+    <header class="headernav">
+        <a class="active" href="./home.html"><img src="images/logo_white.svg" height="50px"></a>
+        <div class="right-container">
+            <div class="search-container">
+                <img class="icon" src="./images/search-icon.svg">
+                <input class="searchbox" accesskey="f" autocapitalize="sentences" title="ค้นหา สยามาวกาศานุกรม [alt-shift-f]" placeholder="ค้นหา สยามวกาศานุกรม" aria-label="ค้นหา สยามวกาศานุกรม" name="search" role="combobox" autocomplete="off" aria-autocomplete="list"
+                    aria-owns="cdx-typeahead-search-menu-0" aria-expanded="false" type="text"> <button type="submit">ค้นหา</button>
+            </div>
+            <input type="checkbox" id="navBtnControl" />
+            <label class="hamburger-icon" for="navBtnControl"></label>
+            <div class="sidenav" for="navBtnControl">
+                <ul id="menu">
+                    <li><a href="#">สำหรับมือใหม่</a>
+                        <ul class="submenu">
+                            <li><a href="#">นิยาม</a></li>
+                            <li><a href="#">ประวัติโดยย่อ</a></li>
+                            <li><a href="#">ฟิสิกส์พื้นฐาน</a></li>
+                            <li><a href="#">ภารกิจ/บุคคลสำคัญ</a></li>
+                            <li><a href="#">แหล่งความรู้อื่น</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">ค้นหาตามหัวข้อ</a>
+                        <ul class="submenu">
+                            <li><a href="#">ประวัติศาสตร์</a></li>
+                            <li><a href="#">วิศวกรรม/เทคโนโลยี</a></li>
+                            <li><a href="#">วิทยาศาสตร์/ดาราศาสตร์</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">สนับสนุนสารานุกรม!</a>
+                        <ul class="submenu">
+                            <li><a href="#">บริจาค</a></li>
+                            <li><a href="#">มีส่วนร่วม</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
     <p>
         การบินอวกาศ คือการเคลื่อนที่ของยานอวกาศสู่และผ่านอวกาศ, โดยใช้เทคโนโลยีจรวดเพื่อใช้ในการขับเคลื่อนเป็นหลัก การบินอวกาศถูกใช้ในการสำรวจอวกาศ, ความพยายามในการเข้าถึง, สำรวจและใช้ประโยชน์จากอวกาศนอกชั้นบรรยากาศของโลก รวมถึงกิจกรรมเชิงพาณิชย์เช่น การท่องเที่ยวอวกาศ
         และการสื่อสารผ่านดาวเทียม โดยทั่วไปจะใช้จรวดในการขนส่งเครื่องจักร สัตว์ และมนุษย์สู่ และเดินทางผ่านอวกาศ วัตถุที่ถูกปล่อยสู่อวกาศอาจเคลื่อนที่ไปตามวิถีโคจรย่อย และจะกลับสู่โลกในทันที หรือคงอยู่ในวงโคจรรอบโลก หรือเดินทางผ่านอวกาศระหว่างดาวเคราะห์
