@@ -1,8 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Sarabun:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+
+
 body {
     margin: 0px 0px 0px 0px;
     padding: 0px;
     width: 100%;
-    font-family: TH Sarabun New;
+    font-family: 'TH Sarabun New', 'TH Sarabun PSK', 'Sarabun', 'Dilennia New', 'Cordia New', 'Thonburi', 'Inter', 'Open Sans', sans-serif;
 }
 
 .hero-image {
@@ -232,66 +236,3 @@ ul {
 
 
 /*-----------------------*/
-
-.wp-content {
-    z-index: -1;
-}
-
-.wp-article {
-    display: flex;
-    max-height: 100%;
-    flex-direction: row-reverse;
-    align-items: flex-start
-}
-
-.wp-article.text-left {
-    flex-direction: row;
-}
-
-.wp-article-text {
-    flex: 40%;
-    height: 390px;
-    resize: horizontal;
-}
-
-.wp-article-image {
-    flex: auto;
-    overflow: hidden;
-    position: relative;
-    color: #fff;
-}
-
-.wp-article-image em {
-    z-index: 2;
-    font-size: 150%;
-    line-height: 1.5em;
-    display: inline-block;
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
-}
-
-.wp-article-image strong {
-    z-index: 2;
-    font-size: 250%;
-    line-height: 1.3em;
-    font-weight: normal;
-    display: block;
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
-}
-
-.wp-article-titles {
-    position: absolute;
-    bottom: 2rem;
-    left: 1.5rem;
-}
-
-.wp-article-image img {
-    width: 100%;
-    height: 100%;
-}
-
-.wp-article-text span:last-child {
-    display: block;
-    text-align: right;
-    margin-top: .2rem;
-    font-weight: bold;
-}
