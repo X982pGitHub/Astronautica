@@ -1,0 +1,297 @@
+body {
+    margin: 0px 0px 0px 0px;
+    padding: 0px;
+    width: 100%;
+    font-family: TH Sarabun New;
+}
+
+.hero-image {
+    background: linear-gradient(to right, rgba(0, 0, 0, .7), rgba(0, 0, 0, .5), transparent), url('images/STS-130_exhaust_cloud_engulfs_Launch_Pad_39A.jpg');
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+    color: rgb(255, 255, 255);
+    font-weight: 400;
+    font-size: 1.25em;
+    min-height: calc(100vh - 80px);
+    display: flex;
+    flex-direction: column;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed;
+    margin-top: 80px;
+}
+
+.hero-image p {
+    width: min(75vw, 455px);
+}
+
+h1 {
+    font-size: clamp(16px, 10vw, 5rem);
+    line-height: 100%;
+    padding: 3rem;
+}
+
+h2 {
+    font-size: 4rem;
+    line-height: 0%;
+    padding-left: 3rem;
+}
+
+p {
+    padding: 3rem;
+    padding-top: 0%;
+}
+
+p a:link {
+    color: inherit;
+    text-decoration: none;
+    font-style: italic;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+}
+
+p a:link::after {
+    content: '';
+    position: absolute;
+    top: 1em;
+    width: 100%;
+    transform: scaleX(0);
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: rgb(255, 255, 255);
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+p a:link:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+p a:visited {
+    color: rgb(200, 200, 200);
+}
+
+p a:visited::after {
+    content: '';
+    position: absolute;
+    top: 1em;
+    width: 100%;
+    transform: scaleX(0);
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: rgb(200, 200, 200);
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+p a:link:active,
+p a:visited:active {
+    color: rgb(150, 150, 150);
+}
+
+.headernav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1;
+}
+
+.headernav a {
+    color: #ffffff;
+    padding: 14px 16px;
+}
+
+.headernav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.headernav a.active {
+    background-color: #000000;
+    color: white;
+}
+
+.right-container {
+    display: flex;
+    padding-right: 10px;
+}
+
+.search-container {
+    float: right;
+    margin: 10px;
+    border: 1px solid rgb(125, 125, 125);
+    border-radius: 2px;
+    border-width: 1px;
+    display: flex;
+    height: 50%;
+}
+
+.search-container button {
+    padding: 8px 10px;
+    background: rgb(155, 155, 155);
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    opacity: 0;
+}
+
+.search-container .icon {
+    margin: 5px;
+    padding-left: 2px;
+    height: 50%;
+}
+
+.search-container button:hover {
+    opacity: 1;
+}
+
+.searchbox {
+    color: white;
+    border-radius: 1px;
+    font-size: 14px;
+    background-color: transparent;
+    box-sizing: border-box;
+    min-height: 32px;
+    height: 50%;
+    border-style: none;
+    padding: 4px 8px;
+    width: 30vw;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#navBtnControl {
+    display: none;
+}
+
+#navBtnControl:checked+label {
+    background: url(./images/chevron-icon.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    border: none;
+    width: 50px;
+    height: 50px;
+}
+
+.hamburger-icon {
+    background: url(./images/hamburger-icon.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    border: none;
+    width: 50px;
+    height: 50px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+#menu {
+    text-align: right;
+    font-size: 200%;
+    padding: 0;
+}
+
+#menu a {
+    padding: 0;
+    line-height: 100%;
+}
+
+.submenu a {
+    font-size: 75%;
+}
+
+.sidenav {
+    position: fixed;
+    flex-direction: column;
+    right: 0;
+    top: 80px;
+    background-color: rgba(0, 0, 0, .5);
+    display: none;
+    padding: 20px;
+}
+
+#navBtnControl:checked~div.sidenav {
+    display: block;
+}
+
+.sidenav a {
+    color: white;
+    text-decoration: none;
+}
+
+
+/*-----------------------*/
+
+.wp-content {
+    z-index: -1;
+}
+
+.wp-article {
+    display: flex;
+    max-height: 100%;
+    flex-direction: row-reverse;
+    align-items: flex-start
+}
+
+.wp-article.text-left {
+    flex-direction: row;
+}
+
+.wp-article-text {
+    flex: 40%;
+    height: 390px;
+    resize: horizontal;
+}
+
+.wp-article-image {
+    flex: auto;
+    overflow: hidden;
+    position: relative;
+    color: #fff;
+}
+
+.wp-article-image em {
+    z-index: 2;
+    font-size: 150%;
+    line-height: 1.5em;
+    display: inline-block;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.wp-article-image strong {
+    z-index: 2;
+    font-size: 250%;
+    line-height: 1.3em;
+    font-weight: normal;
+    display: block;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.wp-article-titles {
+    position: absolute;
+    bottom: 2rem;
+    left: 1.5rem;
+}
+
+.wp-article-image img {
+    width: 100%;
+    height: 100%;
+}
+
+.wp-article-text span:last-child {
+    display: block;
+    text-align: right;
+    margin-top: .2rem;
+    font-weight: bold;
+}
