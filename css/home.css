@@ -1,3 +1,21 @@
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes moveIn {
+    0% {
+        transform: translateX(-2rem);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
 .hero-image {
     background: linear-gradient(to right, rgba(0, 0, 0, .7), rgba(0, 0, 0, .5), transparent), url('/images/STS-130_exhaust_cloud_engulfs_Launch_Pad_39A.jpg');
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
@@ -13,6 +31,29 @@
     margin-top: -20px;
 }
 
+.hero-image h1 {
+    animation-name: fadeIn;
+    animation-duration: 1.0s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+    animation-fill-mode: both;
+}
+
+.hero-image h2 {
+    animation-name: fadeIn, moveIn;
+    animation-duration: 1.0s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in, ease-out;
+    animation-fill-mode: both;
+    animation-delay: .25s;
+}
+
 .hero-image p {
     width: min(75vw, 455px);
+    animation-name: fadeIn, moveIn;
+    animation-duration: 1.5s, 1.0s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in, ease-out;
+    animation-fill-mode: both;
+    animation-delay: .33s;
 }
