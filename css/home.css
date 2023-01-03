@@ -57,3 +57,45 @@
     animation-fill-mode: both;
     animation-delay: .33s;
 }
+
+.featured-content .content-container {
+    display: flex;
+    flex: auto;
+    flex-direction: row;
+    height: 50vh;
+}
+
+.featured-content .content-container-reverse {
+    display: flex;
+    flex: auto;
+    flex-direction: row-reverse;
+}
+
+.featured-content .content-container .text-container {
+    max-width: 33vw;
+    min-width: 250px;
+    height: inherit;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.text-container p {
+    text-overflow: ellipsis;
+    height: 10px;
+}
+
+.featured-content .content-container .image-container,
+.featured-content .content-container-reverse .image-container {
+    height: auto;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-container img {
+    object-fit: cover;
+    flex-shrink: 0;
+    max-width: 100%;
+    min-height: 100%;
+}
