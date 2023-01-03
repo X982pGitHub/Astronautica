@@ -214,7 +214,7 @@ ul {
     animation-fill-mode: forwards;
 }
 
-@-webkit-keyframes AnimationIn {
+@keyframes AnimationIn {
     to {
         visibility: hidden;
     }
@@ -229,7 +229,7 @@ ul {
     animation-fill-mode: forwards;
 }
 
-@-webkit-keyframes AnimationOut {
+@keyframes AnimationOut {
     to {
         visibility: visible;
     }
