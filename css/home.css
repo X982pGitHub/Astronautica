@@ -1,3 +1,12 @@
+@keyframes fadeIn {
+    0% {
+      opacity: 0%;
+    }
+    100% {
+      opacity: 100%;
+    }
+  }
+
 .hero-image {
     background: linear-gradient(to right, rgba(0, 0, 0, .7), rgba(0, 0, 0, .5), transparent), url('/images/STS-130_exhaust_cloud_engulfs_Launch_Pad_39A.jpg');
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
@@ -11,6 +20,7 @@
     background-repeat: no-repeat !important;
     background-attachment: fixed;
     margin-top: 80px;
+    animation: 1s ease-out 0s 1 fadeIn;
 }
 
 .hero-image p {
