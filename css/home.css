@@ -26,13 +26,12 @@
     color: rgb(255, 255, 255);
     font-weight: 400;
     font-size: 1.25em;
-    min-height: calc(100vh - 80px);
+    min-height: calc(100vh - 85px);
     display: flex;
     flex-direction: column;
     background-size: cover !important;
     background-repeat: no-repeat !important;
     background-attachment: fixed;
-    margin-top: -20px;
 }
 
 .hero-image h1 {
