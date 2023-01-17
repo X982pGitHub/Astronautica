@@ -156,7 +156,7 @@ p a:visited:active {
 }
 
 #navBtnControl:checked+label {
-    background: url(/images/chevron-icon.svg);
+    background: url(../images/chevron-icon.svg);
     background-position: center;
     background-repeat: no-repeat;
     cursor: pointer;
@@ -166,7 +166,7 @@ p a:visited:active {
 }
 
 .hamburger-icon {
-    background: url(/images/hamburger-icon.svg);
+    background: url(../images/hamburger-icon.svg);
     background-position: center;
     background-repeat: no-repeat;
     cursor: pointer;

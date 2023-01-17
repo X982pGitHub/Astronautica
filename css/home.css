@@ -21,7 +21,7 @@
 }
 
 .hero-image {
-    background: linear-gradient(to right, rgba(0, 0, 0, .7), rgba(0, 0, 0, .5), transparent), url('/images/STS-130_exhaust_cloud_engulfs_Launch_Pad_39A.jpg');
+    background: linear-gradient(to right, rgba(0, 0, 0, .7), rgba(0, 0, 0, .5), transparent), url('../images/STS-130_exhaust_cloud_engulfs_Launch_Pad_39A.jpg');
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
     color: rgb(255, 255, 255);
     font-weight: 400;
