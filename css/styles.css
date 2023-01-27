@@ -112,9 +112,13 @@ p a:visited:active {
     margin: 10px;
     border: 1px solid rgb(125, 125, 125);
     border-radius: 2px;
-    border-width: 1px;
     display: flex;
     height: 50%;
+}
+
+.search-container:focus-within {
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 5px;
 }
 
 .search-container button {
@@ -125,16 +129,22 @@ p a:visited:active {
     font-size: 18px;
     font-weight: bold;
     opacity: 0;
+    transition: opacity 0.125s ease-in;
+}
+
+.search-container button:hover {
+    opacity: 1;
+    transition: opacity 0.125s ease-in;
+}
+
+.search-container button:active {
+    background: white;
 }
 
 .search-container .icon {
     margin: 5px;
     padding-left: 2px;
     height: 50%;
-}
-
-.search-container button:hover {
-    opacity: 1;
 }
 
 .searchbox {
@@ -149,6 +159,7 @@ p a:visited:active {
     width: 30vw;
     overflow: hidden;
     text-overflow: ellipsis;
+    outline: 0px;
 }
 
 #navBtnControl {
