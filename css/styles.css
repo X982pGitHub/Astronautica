@@ -3,28 +3,39 @@
     font-family: 'TH Sarabun New', 'TH Sarabun PSK', 'Sarabun', 'Dilennia New', 'Cordia New', 'Thonburi', 'Inter', 'Open Sans', sans-serif;
 }
 
+main {
+    margin: 3rem;
+}
+
 body {
     margin: 85px 0px 0px 0px;
     padding: 0px;
     width: 100%;
 }
 
+p,
+h4,
+figcaption {
+    margin-top: 0;
+    padding-top: 0%;
+    font-size: 21px;
+}
+
 h1 {
     font-size: clamp(16px, 10vw, 5rem);
     line-height: 100%;
-    padding: 3rem;
 }
 
 h2 {
-    font-size: 4rem;
-    line-height: 0%;
-    padding-left: 3rem;
+    font-size: 3rem;
+    line-height: 100%;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #CCC;
 }
 
-p {
-    padding: 3rem;
-    padding-top: 0%;
-    font-size: 21px;
+h3 {
+    margin: 0;
+    font-size: 2rem;
 }
 
 p a:link {
@@ -76,6 +87,46 @@ p a:visited::after {
 p a:link:active,
 p a:visited:active {
     color: rgb(150, 150, 150);
+}
+
+figure {
+    border: 1px #CCC solid;
+    padding: 4px;
+    width: fit-content;
+    margin: 0;
+    text-align: center;
+    line-height: 200%;
+    color: rgb(85, 85, 85);
+}
+
+.infobox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    float: right;
+    width: 350px;
+    height: 700px;
+    margin: 0px 0px 20px 20px;
+    background-color: rgb(245, 245, 245);
+    border: none;
+    border-radius: 5px;
+    padding: 5px
+}
+
+.infobox h4 {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.infobox img {
+    margin: 0;
+    max-width: 100%;
+    max-height: 300px;
+    height: auto;
+}
+
+.no-border {
+    border: none;
 }
 
 .headernav {
@@ -287,6 +338,7 @@ ul {
     animation-timing-function: ease-in-out;
     animation-fill-mode: both;
     animation-delay: 1s;
+    margin-bottom: 4rem;
 }
 
 .title-container img {
@@ -312,6 +364,7 @@ ul {
 }
 
 .title-container h1 {
+    margin: 3rem;
     position: absolute;
     bottom: 0;
     color: white;

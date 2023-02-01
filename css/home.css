@@ -34,7 +34,15 @@
     background-attachment: fixed;
 }
 
+.hero-image h1,
+.hero-image h2,
+.hero-image p {
+    margin: 3rem;
+}
+
 .hero-image h1 {
+    font-size: clamp(16px, 12vw, 7rem);
+    margin-top: 6rem;
     animation-name: fadeIn;
     animation-duration: 1.0s;
     animation-iteration-count: 1;
@@ -43,6 +51,9 @@
 }
 
 .hero-image h2 {
+    font-size: 4rem;
+    border: none;
+    margin-bottom: 1rem;
     animation-name: fadeIn, moveIn;
     animation-duration: 1.0s;
     animation-iteration-count: 1;
@@ -52,6 +63,7 @@
 }
 
 .hero-image p {
+    margin-top: 0;
     width: min(75vw, 455px);
     animation-name: fadeIn, moveIn;
     animation-duration: 1.5s, 1.0s;
@@ -87,6 +99,7 @@
 .text-container p,
 .text-container .full-article {
     position: relative;
+    margin: 0;
     height: inherit;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -147,6 +160,9 @@
 }
 
 .image-container h2 {
+    line-height: 0;
+    border: none;
+    font-size: 4rem;
     position: absolute;
     bottom: 0;
     color: white;
