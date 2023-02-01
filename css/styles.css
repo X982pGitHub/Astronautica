@@ -14,7 +14,6 @@ body {
 }
 
 p,
-h4,
 figcaption {
     margin-top: 0;
     padding-top: 0%;
@@ -36,6 +35,10 @@ h2 {
 h3 {
     margin: 0;
     font-size: 2rem;
+}
+
+h4 {
+    font-size: 24px;
 }
 
 p a:link {
@@ -103,14 +106,15 @@ figure {
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-size: 20px;
     float: right;
+    clear: right;
     width: 350px;
-    height: 700px;
     margin: 0px 0px 20px 20px;
     background-color: rgb(245, 245, 245);
     border: none;
     border-radius: 5px;
-    padding: 5px
+    padding: 5px 0px 5px 0px;
 }
 
 .infobox h4 {
@@ -123,6 +127,91 @@ figure {
     max-width: 100%;
     max-height: 300px;
     height: auto;
+}
+
+.infobox .caption {
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+#infobox-float {
+    display: none;
+}
+
+#infobox-float+label {
+    background: url(../images/unlock.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    border: none;
+    font: 20px;
+    position: relative;
+    float: right;
+    clear: right;
+    margin-top: 0;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    margin: 5px;
+}
+
+#infobox-float:checked+label {
+    background: url(../images/lock.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    border: none;
+    position: fixed;
+    right: 0;
+    color: white;
+    margin-right: 25px;
+    top: 100px;
+}
+
+#infobox-float:checked~div.infobox {
+    position: fixed;
+    right: 0;
+    margin-right: 25px;
+    top: 130px;
+    background: rgb(220, 220, 220, 0.2);
+    box-shadow: 2px 2px 10px 4px rgba(0, 0, 0, .2);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    height: 75vh;
+    overflow: scroll;
+    overflow-x: hidden;
+    z-index: 1;
+}
+
+tbody {
+    width: 350px;
+}
+
+table,
+tr {
+    border-top: 1px solid rgb(220, 220, 220);
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th {
+    text-align: left;
+    vertical-align: top;
+    min-width: 150px;
+    max-width: 150px;
+    padding: 7px;
+}
+
+td {
+    min-width: 150px;
+    max-width: 150px;
+    padding: 7px;
+}
+
+.header {
+    background: rgb(220, 220, 220);
+    text-align: center;
 }
 
 .no-border {
