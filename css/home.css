@@ -74,6 +74,14 @@
     animation-delay: .33s;
 }
 
+.hero-image p a:visited {
+    color: rgb(200, 200, 200);
+}
+
+.hero-image p a:visited::after {
+    background-color: rgb(200, 200, 200);
+}
+
 .featured-content .content-container,
 .featured-content .content-container-reverse {
     display: flex;
