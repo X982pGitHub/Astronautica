@@ -21,6 +21,7 @@
 }
 
 .hero-image {
+    background: black;
     background: linear-gradient(to right, rgba(0, 0, 0, .7), rgba(0, 0, 0, .5), transparent), url('../images/STS-130_exhaust_cloud_engulfs_Launch_Pad_39A.jpg');
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
     color: rgb(255, 255, 255);
@@ -174,6 +175,7 @@
     font-style: normal;
     opacity: 0;
     transition: opacity, 0.5s ease-out;
+    overflow: unset;
 }
 
 .featured-type {

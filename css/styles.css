@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Sarabun:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 100px
 }
 
 * {
@@ -22,6 +23,11 @@ figcaption {
     margin-top: 0;
     padding-top: 0%;
     font-size: 21px;
+    margin-bottom: 0.5em;
+}
+
+main p {
+    text-indent: 2em;
 }
 
 h1 {
@@ -46,6 +52,10 @@ h4 {
     font-size: 24px;
 }
 
+p a {
+    text-indent: 0;
+}
+
 p a:link {
     color: inherit;
     text-decoration: none;
@@ -64,7 +74,7 @@ p a:link::after {
     height: 1px;
     bottom: 0;
     left: 0;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
     transform-origin: bottom right;
     transition: transform 0.25s ease-out;
 }
@@ -75,7 +85,7 @@ p a:link:hover::after {
 }
 
 p a:visited {
-    color: rgb(200, 200, 200);
+    color: rgb(100, 100, 100);
 }
 
 p a:visited::after {
@@ -87,7 +97,7 @@ p a:visited::after {
     height: 1px;
     bottom: 0;
     left: 0;
-    background-color: rgb(200, 200, 200);
+    background-color: rgb(100, 100, 100);
     transform-origin: bottom right;
     transition: transform 0.25s ease-out;
 }
@@ -107,6 +117,7 @@ figure {
     line-height: 200%;
     color: rgb(85, 85, 85);
     max-width: 80vw;
+    display: inline-block;
 }
 
 video {
@@ -137,7 +148,6 @@ video {
     margin: 0;
     max-width: 100%;
     max-height: 300px;
-    height: auto;
 }
 
 .infobox .caption {
@@ -151,25 +161,23 @@ video {
 }
 
 #infobox-float+label {
-    background: url(../images/unlock.svg);
+    background: url(../images/lock.svg);
     background-position: center;
     background-repeat: no-repeat;
+    background-size: 20px 20px;
     cursor: pointer;
-    border: none;
-    font: 20px;
     position: relative;
     float: right;
     clear: right;
-    margin-top: 0;
     padding: 10px;
     border: none;
     border-radius: 20px;
-    margin: 5px;
-    transform: translatey(175%);
+    margin: -10px 10px -10px -10px;
+    transform: translatey(125%);
 }
 
 #infobox-float:checked+label {
-    background: url(../images/lock.svg);
+    background: url(../images/unlock.svg);
     background-position: center;
     background-repeat: no-repeat;
     cursor: pointer;
@@ -179,7 +187,7 @@ video {
     color: white;
     margin-right: 25px;
     top: 100px;
-    transform: translate(-120%, 175%);
+    transform: translate(-120%, 275%);
     z-index: 2;
 }
 
@@ -235,13 +243,27 @@ td {
     padding: 7px;
 }
 
-.header {
+.infobox-header {
     background: rgb(220, 220, 220);
     text-align: center;
 }
 
-#infobox-float:checked~div.infobox .header {
+#infobox-float:checked~div.infobox .infobox-header {
     background: rgba(220, 220, 220, .7);
+}
+
+.infobox-subheader {
+    background: rgb(240, 240, 240);
+    text-align: center;
+}
+
+#infobox-float:checked~div.infobox .infobox-subheader {
+    background: rgba(240, 240, 240, .7);
+}
+
+.infobox ul {
+    margin: 0;
+    padding-left: 0;
 }
 
 .no-border {
@@ -267,9 +289,15 @@ td {
 }
 
 .headernav a:hover,
-.headernav a:focus {
+.headernav a:focus,
+.headernav a.active {
     opacity: 100%;
     transition: opacity 0.25s ease-out;
+}
+
+.headernav a.active {
+    font-weight: bold;
+    cursor: pointer;
 }
 
 .right-container {
@@ -394,6 +422,8 @@ ul {
     animation: AnimationIn 0s ease-out 0.25s forwards;
     -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
+    max-height: calc(100vh - calc(80px + calc(1.25rem) + 20px));
+    overflow-y: auto;
 }
 
 @keyframes AnimationIn {
@@ -448,6 +478,7 @@ ul {
 }
 
 .title-container {
+    background: #000000;
     width: 100%;
     overflow: hidden;
     position: relative;
