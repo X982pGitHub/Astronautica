@@ -130,7 +130,7 @@ figure img {
     width: inherit;
 }
 
-video {
+figure video {
     object-fit: contain;
     width: inherit;
 }
