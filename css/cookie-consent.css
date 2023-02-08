@@ -2,16 +2,16 @@
     position: fixed;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.6);
     color: #fff;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: stretch;
     padding: 10px 20px;
     border-radius: 10px;
     z-index: 10;
-    width: 300px;
+    width: 350px;
     margin: 20px;
 }
 
@@ -21,11 +21,9 @@
 
 #cookieConsentContainer {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 800px;
-    margin: 0;
-    padding: 10px 20px;
+    justify-content: flex-start;
+    padding: 20px 0px;
+    column-gap: 20px;
 }
 
 #cookieConsentText {
@@ -34,16 +32,14 @@
 }
 
 #cookieConsentAccept,
-#cookieConsentDeny,
-#cookieConsentLearnMore {
+#cookieConsentDeny {
     background-color: transparent;
-    border: none;
+    border: solid 1.5px white;
+    border-radius: 10px;
     color: #fff;
     cursor: pointer;
     font-size: 21px;
-    margin-left: 10px;
-    padding: 10px 15px;
-    text-transform: uppercase;
+    padding: 7.5px 20px;
     transition: all 0.3s ease-in-out;
 }
 
@@ -52,4 +48,12 @@
 #cookieConsentLearnMore:hover {
     background-color: #fff;
     color: #333;
+}
+
+#cookieConsent p a {
+    color: white;
+}
+
+#cookieConsent p a::after {
+    background-color: rgb(255, 255, 255);
 }
