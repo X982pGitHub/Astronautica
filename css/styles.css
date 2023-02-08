@@ -48,8 +48,14 @@ h3 {
     font-size: 2rem;
 }
 
-h4 {
+h4,
+h5 {
     font-size: 24px;
+}
+
+h5 {
+    font-weight: initial;
+    margin: 0;
 }
 
 p a {
@@ -110,18 +116,23 @@ p a:visited:active {
 figure {
     border: 1px #CCC solid;
     padding: 4px;
-    width: fit-content;
-    height: fit-content;
-    margin: 0;
+    margin: 20px;
+    margin-left: 0;
     text-align: center;
     line-height: 200%;
     color: rgb(85, 85, 85);
     max-width: 80vw;
-    display: inline-block;
+    float: left;
+}
+
+figure img {
+    object-fit: contain;
+    width: inherit;
 }
 
 video {
-    width: 100%;
+    object-fit: contain;
+    width: inherit;
 }
 
 .infobox {
