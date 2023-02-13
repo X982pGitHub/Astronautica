@@ -1,0 +1,34 @@
+canvas {
+    border: 1px solid black;
+}
+
+#object1 {
+    background-color: rgb(231, 200, 96);
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#object2 {
+    background-color: rgb(77, 138, 230);
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.orbit-sim {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    display: flex;
+    color: white;
+}

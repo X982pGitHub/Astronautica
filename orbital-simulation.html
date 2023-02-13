@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-16" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <title>ระบบวงโคจร | สยามวกาศานุกรม</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/orbital-sim.css">
+</head>
+
+<body>
+    <header class="headernav">
+        <a class="active" href="./home.html"><img src="images/logo_white.svg" height="50px"></a>
+        <div class="right-container">
+            <div class="search-container">
+                <img class="icon" src="./images/search-icon.svg">
+                <input class="searchbox" accesskey="f" autocapitalize="sentences" title="ค้นหา สยามาวกาศานุกรม [alt-shift-f]" placeholder="ค้นหา สยามวกาศานุกรม" aria-label="ค้นหา สยามวกาศานุกรม" name="search" role="combobox" autocomplete="off" aria-autocomplete="list"
+                    aria-owns="cdx-typeahead-search-menu-0" aria-expanded="false" type="text"> <button type="submit">ค้นหา</button>
+            </div>
+            <input type="checkbox" id="navBtnControl" />
+            <label class="hamburger-icon" for="navBtnControl"></label>
+            <div class="sidenav" for="navBtnControl">
+                <nav>
+                    <ul id="menu">
+                        <li>สำหรับมือใหม่
+                            <ul class="submenu">
+                                <li><a href="./intro.html">นิยาม</a></li>
+                                <li><a href="./intro.html#brief-history">ประวัติโดยย่อ</a></li>
+                                <li><a href="#">ฟิสิกส์พื้นฐาน</a></li>
+                                <li><a href="#">ภารกิจ/บุคคลสำคัญ</a></li>
+                                <li><a href="#">แหล่งความรู้อื่น</a></li>
+                            </ul>
+                        </li>
+                        <li>ค้นหาตามหัวข้อ
+                            <ul class="submenu">
+                                <li><a href="#">ประวัติศาสตร์</a></li>
+                                <li><a href="#">วิศวกรรม/เทคโนโลยี</a></li>
+                                <li><a href="#">วิทยาศาสตร์/ดาราศาสตร์</a></li>
+                            </ul>
+                        </li>
+                        <li>สนับสนุนสารานุกรม!
+                            <ul class="submenu">
+                                <li><a href="#">บริจาค</a></li>
+                                <li><a href="#">มีส่วนร่วม</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <div class="title-container">
+        <h1>ระบบวงโคจร</h1>
+    </div>
+    <main>
+    </main>
+    <div id="object1"></div>
+    <div id="object2"></div>
+
+    <script src="./js/svg-js/svg.min.js"></script>
+    <script src="./js/orbital-sim.js"></script>
+
+</body>
+
+</html>

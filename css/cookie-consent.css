@@ -44,10 +44,14 @@
 }
 
 #cookieConsentAccept:hover,
-#cookieConsentDeny:hover,
-#cookieConsentLearnMore:hover {
+#cookieConsentDeny {
     background-color: #fff;
     color: #333;
+}
+
+#cookieConsentDeny:hover {
+    background-color: #ffffffb9;
+    color: #ffffff;
 }
 
 #cookieConsent p a {
