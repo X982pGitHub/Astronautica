@@ -16,10 +16,10 @@ let r, f;
 const radius1 = 100;
 const radius2 = 10;
 
-document.getElementById("object1").style.width = radius1;
-document.getElementById("object1").style.height = radius1;
-document.getElementById("object2").style.width = radius2;
-document.getElementById("object2").style.height = radius2;
+document.getElementById("object1").style.width = radius1 + 'px';
+document.getElementById("object1").style.height = radius1 + 'px';
+document.getElementById("object2").style.width = radius2 + 'px';
+document.getElementById("object2").style.height = radius2 + 'px';
 
 // Initial position and velocity of body 1
 let position1 = new Vector(500, 500);
@@ -59,14 +59,14 @@ function simulate() {
     // Update the position of body 1 based on its velocity
     position1.x += velocity1.x * dt;
     position1.y += velocity1.y * dt;
-    document.getElementById("object1").style.left = position1.x;
-    document.getElementById("object1").style.top = position1.y;
+    document.getElementById("object1").style.left = position1.x + 'px';
+    document.getElementById("object1").style.top = position1.y + 'px';
 
     // Update the position of body 2 based on its velocity
     position2.x += velocity2.x * dt;
     position2.y += velocity2.y * dt;
-    document.getElementById("object2").style.left = position2.x;
-    document.getElementById("object2").style.top = position2.y;
+    document.getElementById("object2").style.left = position2.x + 'px';
+    document.getElementById("object2").style.top = position2.y + 'px';
 
     if (n % 10 == 0) {
         prevPosition1.push([position1.x, position1.y]);
