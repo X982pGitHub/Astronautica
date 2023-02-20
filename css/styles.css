@@ -455,7 +455,7 @@ ul {
 }
 
 .search-results li:focus-within,
-.search-results li:hover
+.search-results li:hover,
 .search-results li:active{
     background-color: rgba(255, 255, 255, 0.1);
 }
