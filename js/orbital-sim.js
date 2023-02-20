@@ -23,35 +23,44 @@ class OrbitalParam {
 
 // Simulation constants
 const G = 6.67430e-11;
-const dt = 0.1;
-const trailLength = 1000;
-const trailRes = 0.01;
+const dt = 20;
+const trailLength = 12;
+const trailRes = 1;
 let r, f;
 let n = 0;
 
 // Simulation parameters
 var bodies = [];
 bodies[0] = new OrbitalParam(
-    100000000000000, //mass
+    100000000000, //mass
     20, //radius
     new Vector(0, 0), //initial position
-    new Vector(0, 0), //initial velocity
+    new Vector(0, .01), //initial velocity
     "rgb(231, 200, 96)" //colour
 );
 bodies[1] = new OrbitalParam(
-    10000000000000, //mass
+    4000000, //mass
     10, //radius
-    new Vector(-400, -200), //initial position
-    new Vector(-2, 1), //initial velocity
+    new Vector(0, -400), //initial position
+    new Vector(-3.5, 0), //initial velocity
     "rgb(77, 138, 230)" //colour50, 168, 82
 );
 bodies[2] = new OrbitalParam(
-    10000000000000, //mass
+    4000000, //mass
     10, //radius
-    new Vector(400, 200), //initial position
-    new Vector(-2, 1), //initial velocity
+    new Vector(0, 400), //initial position
+    new Vector(3.5, 0), //initial velocity
     "rgb(50, 168, 82)" //colour50, 168, 82
 );
+for (let i = 3; i < 100; i++){
+    bodies[i] = new OrbitalParam(
+        1000000000, //mass
+        5, //radius
+        new Vector(Math.sin(i/(Math.PI*5))*350, Math.cos(i/(Math.PI*5))*250), //initial position
+        new Vector(Math.sin(i/(Math.PI*5))*0.25, Math.sin(i/(Math.PI*5))*-0.25), //initial velocity
+        "rgb(82, 82, 82)" //colour50, 168, 82
+    );
+}
 
 
 function simulate() {
@@ -82,16 +91,16 @@ function simulate() {
 
         // Calculate iteration time and record position history
         //console.log(Math.ceil((1/Math.sqrt(bodies[0].vel.x * bodies[0].vel.x + bodies[0].vel.y * bodies[0].vel.y))/trailRes))
-        if (n % (Math.ceil((1 / Math.sqrt(bodies[i].vel.x * bodies[i].vel.x + bodies[i].vel.y * bodies[i].vel.y)) / trailRes)) == 0) {
+        if (n % (Math.ceil((1 / Math.sqrt(bodies[i].vel.x * bodies[i].vel.x + bodies[i].vel.y * bodies[i].vel.y)) / (trailRes*dt))) == 0) {
             bodies[i].prevPos.push([bodies[i].pos.x, bodies[i].pos.y]);
             if (bodies[i].prevPos.length > trailLength) bodies[i].prevPos.shift();
         }
 
         // Trail iteration time debugger
         /*
-        for (let k = 0; k < bodies[i].prevPos.length - 1; i++) {
+        for (let k = 0; k < bodies[i].prevPos.length - 1; k++) {
             ctx.beginPath();
-            ctx.arc(bodies[0].prevPos[k][0] + canvas.width / 2, bodies[0].prevPos[k][1] + canvas.height / 2, 2, 0, 2 * Math.PI);
+            ctx.arc(bodies[i].prevPos[k][0] + canvas.width / 2, bodies[i].prevPos[k][1] + canvas.height / 2, 2, 0, 2 * Math.PI);
             ctx.fillStyle = "RED";
             ctx.fill();
         }
@@ -106,6 +115,8 @@ function simulate() {
         ctx.lineTo(bodies[i].pos.x + canvas.width / 2, bodies[i].pos.y + canvas.height / 2);
         ctx.strokeStyle = "grey";
         ctx.stroke();
+    }
+    for (let i = 0; i < bodies.length; i++) {
 
         // Draw bodies
         ctx.beginPath();
