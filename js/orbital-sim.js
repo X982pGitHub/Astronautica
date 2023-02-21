@@ -16,6 +16,7 @@ class OrbitalParam {
         this.radius = radius;
         this.pos = pos;
         this.vel = vel;
+        this.dirc;
         this.prevPos = [];
         this.colour = colour;
     }
@@ -25,7 +26,7 @@ class OrbitalParam {
 const G = 6.67430e-11;
 const dt = 0.1;
 const trailLength = 1000;
-const trailRes = 0.01;
+const trailRes = 0.1;
 let r, f;
 let n = 0;
 
@@ -39,25 +40,40 @@ bodies[0] = new OrbitalParam(
     "rgb(231, 200, 96)" //colour
 );
 bodies[1] = new OrbitalParam(
-    10000000000000, //mass
+    1000000000000, //mass
     10, //radius
     new Vector(-400, -200), //initial position
-    new Vector(-2, 1), //initial velocity
-    "rgb(77, 138, 230)" //colour50, 168, 82
+    new Vector(-2, 3), //initial velocity
+    "rgb(77, 138, 230)" //colour
 );
 bodies[2] = new OrbitalParam(
-    10000000000000, //mass
+    1000000000000, //mass
     10, //radius
     new Vector(400, 200), //initial position
-    new Vector(-2, 1), //initial velocity
-    "rgb(50, 168, 82)" //colour50, 168, 82
+    new Vector(2, -3), //initial velocity
+    "rgb(50, 168, 82)" //colour
 );
+for (let i = 3; i < 4; i++) {
+    bodies[i] = new OrbitalParam(
+        Math.random() * 100, //mass
+        5, //radius
+        new Vector((Math.random() - .5) * 2000, (Math.random() - .5) * 2000), //initial position
+        new Vector((Math.random()) * 5, (Math.random()) * 5), //initial velocity
+        "rgb(100, 100, 100)" //colour
+    );
+}
 
 
 function simulate() {
     // Clear the canvas
     ctx.fillStyle = "black";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    bodies[3].dirc = Math.atan(bodies[3].vel.y / bodies[3].vel.x);
+    console.log(bodies[3].dirc)
+    var throttle = (document.getElementById("throttle").value - 50) / 1000;
+    bodies[3].vel.x += throttle * Math.cos(bodies[3].dirc);
+    bodies[3].vel.y += throttle * Math.sin(bodies[3].dirc);
 
     for (let i = 0; i < bodies.length; i++) {
         for (let j = i + 1; j < bodies.length; j++) {
@@ -81,17 +97,17 @@ function simulate() {
         bodies[i].pos.y += bodies[i].vel.y * dt;
 
         // Calculate iteration time and record position history
-        //console.log(Math.ceil((1/Math.sqrt(bodies[0].vel.x * bodies[0].vel.x + bodies[0].vel.y * bodies[0].vel.y))/trailRes))
-        if (n % (Math.ceil((1 / Math.sqrt(bodies[i].vel.x * bodies[i].vel.x + bodies[i].vel.y * bodies[i].vel.y)) / trailRes)) == 0) {
+        //console.log(Math.ceil((1/Math.sqrt(bodies[0].vel.x * bodies[0].vel.x + bodies[0].vel.y * bodies[0].vel.y))/(trailRes * dt)))
+        if (n % (Math.ceil((1 / Math.sqrt(bodies[i].vel.x * bodies[i].vel.x + bodies[i].vel.y * bodies[i].vel.y)) / (trailRes * dt))) == 0) {
             bodies[i].prevPos.push([bodies[i].pos.x, bodies[i].pos.y]);
             if (bodies[i].prevPos.length > trailLength) bodies[i].prevPos.shift();
         }
 
         // Trail iteration time debugger
         /*
-        for (let k = 0; k < bodies[i].prevPos.length - 1; i++) {
+        for (let k = 0; k < bodies[i].prevPos.length; k++) {
             ctx.beginPath();
-            ctx.arc(bodies[0].prevPos[k][0] + canvas.width / 2, bodies[0].prevPos[k][1] + canvas.height / 2, 2, 0, 2 * Math.PI);
+            ctx.arc(bodies[i].prevPos[k][0] + canvas.width / 2, bodies[i].prevPos[k][1] + canvas.height / 2, 2, 0, 2 * Math.PI);
             ctx.fillStyle = "RED";
             ctx.fill();
         }
