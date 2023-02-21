@@ -33,10 +33,10 @@ let n = 0;
 // Simulation parameters
 var bodies = [];
 bodies[0] = new OrbitalParam(
-    100000000000000, //mass
+    100000000000, //mass
     20, //radius
     new Vector(0, 0), //initial position
-    new Vector(0, 0), //initial velocity
+    new Vector(0, .01), //initial velocity
     "rgb(231, 200, 96)" //colour
 );
 bodies[1] = new OrbitalParam(
@@ -53,13 +53,13 @@ bodies[2] = new OrbitalParam(
     new Vector(2, -3), //initial velocity
     "rgb(50, 168, 82)" //colour
 );
-for (let i = 3; i < 4; i++) {
+for (let i = 3; i < 100; i++) {
     bodies[i] = new OrbitalParam(
-        Math.random() * 100, //mass
+        1000000000, //mass
         5, //radius
-        new Vector((Math.random() - .5) * 2000, (Math.random() - .5) * 2000), //initial position
-        new Vector((Math.random()) * 5, (Math.random()) * 5), //initial velocity
-        "rgb(100, 100, 100)" //colour
+        new Vector(Math.sin(i / (Math.PI * 5)) * 350, Math.cos(i / (Math.PI * 5)) * 250), //initial position
+        new Vector(Math.sin(i / (Math.PI * 5)) * 0.25, Math.sin(i / (Math.PI * 5)) * -0.25), //initial velocity
+        "rgb(82, 82, 82)" //colour50, 168, 82
     );
 }
 
@@ -105,7 +105,7 @@ function simulate() {
 
         // Trail iteration time debugger
         /*
-        for (let k = 0; k < bodies[i].prevPos.length; k++) {
+        for (let k = 0; k < bodies[i].prevPos.length - 1; k++) {
             ctx.beginPath();
             ctx.arc(bodies[i].prevPos[k][0] + canvas.width / 2, bodies[i].prevPos[k][1] + canvas.height / 2, 2, 0, 2 * Math.PI);
             ctx.fillStyle = "RED";
@@ -122,6 +122,8 @@ function simulate() {
         ctx.lineTo(bodies[i].pos.x + canvas.width / 2, bodies[i].pos.y + canvas.height / 2);
         ctx.strokeStyle = "grey";
         ctx.stroke();
+    }
+    for (let i = 0; i < bodies.length; i++) {
 
         // Draw bodies
         ctx.beginPath();
