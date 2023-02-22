@@ -24,7 +24,7 @@ class OrbitalParam {
 
 // Simulation constants
 const G = 6.67430e-11;
-const dt = 0.1;
+const dt = 1;
 const trailLength = 1000;
 const trailRes = 0.1;
 let r, f;
@@ -33,7 +33,7 @@ let n = 0;
 // Simulation parameters
 var bodies = [];
 bodies[0] = new OrbitalParam(
-    100000000000, //mass
+    100000000000000, //mass
     20, //radius
     new Vector(0, 0), //initial position
     new Vector(0, .01), //initial velocity
@@ -53,7 +53,7 @@ bodies[2] = new OrbitalParam(
     new Vector(2, -3), //initial velocity
     "rgb(50, 168, 82)" //colour
 );
-for (let i = 3; i < 100; i++) {
+for (let i = 3; i < 4; i++) {
     bodies[i] = new OrbitalParam(
         1000000000, //mass
         5, //radius

@@ -129,11 +129,35 @@ figure {
 figure img {
     object-fit: contain;
     width: inherit;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 figure video {
     object-fit: contain;
     width: inherit;
+}
+
+table.in-article-table,
+.in-article-table td {
+    border-collapse: collapse;
+    border: 1px solid rgb(220, 220, 220);
+    font-size: 20px;
+}
+
+table.in-article-table {
+    margin: 0rem 3rem 5rem 3rem;
+}
+
+.in-article-table th {
+    padding: 0.5rem;
+    background: rgb(220, 220, 220);
+}
+
+.in-article-table td {
+    padding: 0.5rem;
+    width: 20%;
+    text-align: center;
 }
 
 .infobox {
@@ -230,32 +254,30 @@ figure video {
     height: auto !important;
 }
 
-tbody {
+.infobox tbody {
     width: 350px;
 }
 
-table,
-tr {
+.infobox table,
+.infobox tr {
     border-top: 1px solid rgb(220, 220, 220);
     border-collapse: collapse;
     width: 100%;
 }
 
-th {
+.infobox th {
     text-align: left;
     vertical-align: top;
-    min-width: 150px;
     max-width: 150px;
     padding: 7px;
 }
 
-td {
-    min-width: 150px;
+.infobox td {
     max-width: 150px;
     padding: 7px;
 }
 
-.infobox-header {
+.infobox .infobox-header {
     background: rgb(220, 220, 220);
     text-align: center;
 }
@@ -422,11 +444,11 @@ ul {
     margin-bottom: 1.25rem;
 }
 
-.search-container:not(:focus-within) .search-results{
+.search-container:not(:focus-within) .search-results {
     display: none;
 }
 
-.search-results{
+.search-results {
     position: fixed;
     top: 90px;
     background-color: rgba(0, 0, 0, .5);
@@ -435,28 +457,28 @@ ul {
     border-radius: 3px;
 }
 
-.search-results ul{
+.search-results ul {
     margin: 0;
     padding: 10px 0px;
     list-style-type: none;
 }
 
-.search-results li, 
-.search-results p{
+.search-results li,
+.search-results p {
     padding: 7px;
     padding-left: 20px;
     font-size: 18px;
     margin: 0;
 }
 
-.search-results p{
+.search-results p {
     padding: 17px;
     padding-left: 20px;
 }
 
 .search-results li:focus-within,
 .search-results li:hover,
-.search-results li:active{
+.search-results li:active {
     background-color: rgba(255, 255, 255, 0.1);
 }
 
@@ -580,4 +602,65 @@ ul {
     animation-delay: 1s;
     animation-timing-function: ease-out;
     animation-fill-mode: both;
+}
+
+@media screen and (min-width: calc(1100px + 6rem)) {
+    main {
+        margin: auto;
+        max-width: 1100px;
+    }
+    .title-container h1 {
+        margin-left: auto;
+        margin-right: auto;
+        right: 0;
+        width: 1100px;
+    }
+    @keyframes onLoadTitleText {
+        0% {
+            font-size: 10rem;
+            transform: translateX(calc(-50vw + calc(550px + 3rem)));
+        }
+        100% {
+            font-size: 5rem;
+            transform: translateX(0);
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    main,
+    .title-container h1 {
+        margin: 1rem;
+        max-width: calc(100% - 2rem);
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .infobox,
+    tbody {
+        width: 100%;
+    }
+    #infobox-float:checked~div.infobox {
+        margin-right: 0;
+    }
+    #infobox-float:checked+label {
+        margin-right: -12.5px;
+    }
+    .searchbox {
+        display: none;
+    }
+    .search-container button {
+        display: none;
+    }
+    .search-container {
+        border: none;
+    }
+    @keyframes onLoadTitleText {
+        0% {
+            font-size: 5rem;
+        }
+        100% {
+            font-size: 3rem;
+        }
+    }
 }

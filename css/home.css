@@ -113,7 +113,15 @@
     overflow: hidden;
     text-overflow: ellipsis;
     font-size: max(17px, calc(0.75vw + 66%));
-    padding: 0px 10px 0px 10px;
+    padding: 2rem 1.5rem 0px 1.5rem;
+}
+
+.text-container .full-article {
+    padding: 0rem 1.5rem 1rem 1.5rem;
+}
+
+.full-article a {
+    color: black;
 }
 
 .text-container p::after {

@@ -13,6 +13,7 @@
     z-index: 10;
     width: 350px;
     margin: 20px;
+    max-width: calc(100% - 80px);
 }
 
 #cookieConsent h1 {
