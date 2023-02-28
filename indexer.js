@@ -34,7 +34,7 @@ function parseHtmlFile(filePath) {
 // Function to write data to CSV file
 function writeCsvFile(data) {
   const csvContent = data.map((row) => `${row.fileName},${row.engName},${row.thaiName},`).join('\n');
-  fs.writeFileSync('./public/index.csv', csvContent, 'utf-8');
+  fs.writeFileSync('./index.csv', csvContent, 'utf-8');
 }
 
 // Main function to read all HTML files and write to CSV
