@@ -29,28 +29,32 @@ function search(query) {
     return;
   }
 
-  // Define a regular expression to match the query with fuzzy logic
-  const regex = new RegExp(query.split('').join('.*?'), 'i');
-
-  // Iterate over the data and look for matches
-  const matches = data.filter((item) => regex.test(item[1]) || regex.test(item[2]));
+  // Use fuzzysort to search for matches
+  const results = fuzzysort.go(query, data, {keys: [1, 2], limit: 50});
 
   // If no matches, show a message
-  if (matches.length === 0) {
+  if (results.length === 0) {
     searchResults.innerHTML = '<p>ไม่พบรายการค้นหา</p>';
     return;
   }
 
   // Create a list of matched items
   const list = document.createElement('ul');
-  matches.forEach((item, index) => {
+  results.forEach((result, index) => {
+    const item = result.obj;
+    searchResults.innerHTML = '<p>ไม่พบรายการค้นหา</p>'
+    list.style.display = "none";
     const listItem = document.createElement('li');
     const link = document.createElement('a');
-    link.href = './' + item[0] + '.html';
-    link.textContent = item[2] + ' (' + item[1] + ')';
-    link.tabIndex = index + 1;
-    listItem.appendChild(link);
-    list.appendChild(listItem);
+    if(item[2] != ""){
+      searchResults.innerHTML = ''
+      link.href = './' + item[0] + '.html';
+      link.textContent = item[2] + ' (' + item[1] + ')';
+      link.tabIndex = index + 1;
+      listItem.appendChild(link);
+      list.style.display = "block";
+      list.appendChild(listItem);
+    }
   });
 
   // Append the list to the results container
