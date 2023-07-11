@@ -104,7 +104,7 @@ function generateJson(){
       [preWriteData[i][0]]: {
         [pushTime]:{
         hitCount: parseInt(preWriteData[i][3] || 0, 10),
-        totalViewTime: parseInt(preWriteData[i][4] || 0, 10),
+        totalViewTime: parseFloat(preWriteData[i][4] || 0),
         avgViewTime: (preWriteData[i][4]/preWriteData[i][3] || 0)
         }
       }

@@ -26,7 +26,6 @@ function writeCsvFile(data) {
 app.all('/pagehit', (req, res) => {
   const pageName = req.body.pageName;
   const viewTime = req.body.viewTime;
-  console.log(viewTime);
   const data = fs.readFileSync(csvUrl, 'utf-8')
     .split(/\r?\n|\r|\n/g)
     .map((row) => row.split(',')
@@ -34,9 +33,10 @@ app.all('/pagehit', (req, res) => {
   for (let i = 0; i < data.length; i++){
     if (pageName == data[i][0]){
       data[i][3]++;
-      data[i][4] = parseInt(data[i][4] || 0) + viewTime;
+      data[i][4] = parseFloat(data[i][4] || 0) + viewTime;
       writeCsvFile(data);
       res.sendStatus(200)
+      console.log("(",data[i][3],")",pageName + ": ",viewTime/1000,"s");
     }
   }
 });
